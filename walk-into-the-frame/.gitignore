@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.mp4
+*.mov
+*.heic
+*.jpg
+*.jpeg
+*.png
+*.gif
+outputs/
+raw-assets/
+cache/
