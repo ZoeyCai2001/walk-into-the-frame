@@ -15,9 +15,10 @@
 ## 使用方式
 
 ```text
-用 $walk-into-the-frame 把这两张照片重新编排成一张平衡的纸面拼贴海报。
+用 $walk-into-the-frame 把这两张照片重新编排成一张平衡的米白纸底拼贴海报。
 从风景照里提取门、台阶和暖光，从我的照片里提取草帽、米色穿搭和摄影者身份。
-保留建筑、台阶和主要植物结构，但不要保留照片像素；让人物成为约占画面高度 12–16% 的可读剪纸轮廓。
+把场景拆成独立的门、台阶和植物纸片层，不要保留照片像素；让人物通过台阶、门、窗户、凳子或路径等具体关系融入画面，不使用固定人物比例。
+如果地点由我提供，请在留白处加一个短小手写的 `@Place` 标记。
 ```
 
 ## 方法来源
@@ -31,3 +32,17 @@
 - [ARCHITECTURE.md](ARCHITECTURE.md)：当前静态图优先架构与后续视频路线
 - [TODO.md](TODO.md)：实施清单
 - [references/video-tools.md](references/video-tools.md)：视频阶段的历史调研与交接说明
+- [scripts/compose_photo_pairs.py](../scripts/compose_photo_pairs.py)：按 `N-1`/`N-2` 批量导出原图与 zine 图对照拼贴
+
+## 对照图批量导出
+
+将原图命名为 `N-1`、生成图命名为 `N-2`，运行：
+
+```bash
+python3 scripts/compose_photo_pairs.py \
+  "/path/to/chosed" \
+  "/path/to/chosed/composites"
+```
+
+横图会按“原图上、生成图下”排列，竖图会按“原图左、生成图右”排列。脚本只按共同边缩放，
+保持原比例，并从生成图取样米白纸底作为外层画布。

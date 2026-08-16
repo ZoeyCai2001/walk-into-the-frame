@@ -8,7 +8,10 @@
 - [ ] 只有在用户明确要求极简时，测试不对称岛、撕纸窗口、方向漂移等稀疏构图。
 - [ ] 测试三种人物 cameo：剪纸块、干墨轮廓、错落碎片。
 - [ ] 测试 Standard Accent Mode 与精确触发的 `单色块模式`。
-- [ ] 检查主体/景的比例、人物 12–16% 高度、视觉隐喻、眼线路径和人物层级。
+- [ ] 检查主体/景的比例、关系锚点、接触/遮挡、视觉隐喻、眼线路径和人物层级。
+- [ ] 检查拼贴感：主纸窗、辅助纸片、边界、接缝、重叠、断裂和外围留白是否可见。
+- [ ] 检查米白底纸是否稳定，天空/海水/墙面是否被正确抽取为独立层而非整张底色。
+- [ ] 测试用户提供地点后的短手写 `@Place` 标记，并验证未提供地点时不会自行添加地理信息。
 - [ ] 记录失败类型：仍像照片、满版插画、装饰过多、人物太写实、色彩失控、无关图标、文字变形。
 - [ ] 固化最终 prompt、recipe、创作想法和艺术指导的返回格式。
 
@@ -17,7 +20,8 @@
 - [ ] 为 reference routing 增加场景图/人物图/风格图的角色判断。
 - [ ] 为不同场景建立 source-derived composition family 选择规则。
 - [ ] 为 cut-paper、dry-print、broken contour、colored-pencil fragment 写独立配方。
-- [ ] 增加人物 cameo 的 `barely-there / readable-subtle / noticeable` 三档；默认使用 readable-subtle。
+- [ ] 增加人物 cameo 的 `barely-there / relational-subtle / noticeable` 三档；默认使用 relational-subtle。
+- [ ] 为凳子、窗户、台阶、门、栏杆、船、桌子和路径建立关系锚点示例。
 - [ ] 增加 `balanced-scene-collage / sparse-distillation` 两种构图模式。
 - [ ] 增加 `standard-accent / solid-color-block` 两套色彩检查。
 - [ ] 为每次生成保存输入角色、保留等级、Distillation Card、prompt 和质量结果。
