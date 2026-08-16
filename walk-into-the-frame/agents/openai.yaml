@@ -1,4 +1,4 @@
 interface:
   display_name: "Walk Into The Frame"
-  short_description: "Turn a scene and self-portrait into a zine"
-  default_prompt: "Use $walk-into-the-frame to turn my scene photo and self-portrait into a cohesive zine-style still image where I appear as a subtle participant."
+  short_description: "Distil photos into an authored zine poster"
+  default_prompt: "Use $walk-into-the-frame to distil my scene photo and self-portrait into an original sparse editorial zine poster with a small abstract cameo of me."

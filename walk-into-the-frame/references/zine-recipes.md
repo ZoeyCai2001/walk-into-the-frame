@@ -1,103 +1,114 @@
-# Zine 风格配方
+# Zine 视觉配方
 
-这份参考只在用户选择具体视觉方向，或某次生成失败需要定向修复时读取。不要把所有配方混在一条 prompt 里。
+这些配方用于选择一张稀疏编辑海报的构图和物质语言。不要把所有配方混在一次生成里。
 
-## Contents
+## 共同系统
 
-- [共同约束](#共同约束)
-- [手绘旅行明信片](#手绘旅行明信片)
-- [彩铅观察稿](#彩铅观察稿)
-- [纸张拼贴](#纸张拼贴)
-- [线稿与限色块](#线稿与限色块)
-- [Risograph / 版画](#risograph--版画)
-- [Photo-relic editorial](#photo-relic-editorial)
-- [失败修复](#失败修复)
+- 作品必须独立成立，不是照片滤镜或满版风景插画；
+- 默认使用平衡场景拼贴：主体 mass 约占 45–65%，安静纸面约占 30–45%；
+- 只有明确要求极简时，才使用稀疏蒸馏：主体 cluster 约占 12–32%，安静纸面约占 68–85%；
+- 一个主要视觉隐喻，一个主视觉语法，最多一个辅助语法；
+- 默认一个高饱和色彩重点；
+- 人物以抽象 cameo 参与，穿搭/帽子/相机是线索，不恢复写实脸；
+- 不使用照片像素、完整原构图、随机装饰、商业广告排版或长文字。
 
-## 共同约束
+## Balanced Scene Collage｜平衡场景拼贴
 
-所有配方都应先写 scene facts，再写媒介。默认保留原场景的主要动线、空间层次和地点识别线索；人物使用同一套色板、纸张和线条，不以写实脸作为主要身份来源。
-
-## 手绘旅行明信片
+这是本项目的默认配方。保留风景主体的相对完整结构，例如建筑门面、台阶和两侧植物，但把摄影纹理转译成纸片、干墨和印刷颗粒。人物放在有明确尺度参照的位置，默认占画面高度 12–16%。
 
 ```text
-medium: hand-drawn travel postcard
-palette: scene-derived greens, warm paper, one muted accent
-surface: visible pencil and ink marks on lightly toothy paper
-edges: restrained postcard border or paper edge
-composition: preserve the original travel viewpoint and main path
+layout: relatively complete scene mass with moderate surrounding paper
+scene_mass: 45–65% of canvas
+quiet_paper: 30–45% of canvas
+focal_carrier: complete architectural/landscape mass plus one abstract cameo
+figure_scale: 12–16% of frame height
+edge: one restrained torn or natural contour
+accent: one source-derived high-chroma hue
 ```
 
-适合楼梯、街角、建筑入口和有明确方向感的场景。人物可以像旅行手记里的小插图一样出现在路径上；不要自动生成邮票、品牌或可读文字。
+不要把主体缩成一个小窗口，也不要让人物变成角落里无法辨认的点。
 
-## 彩铅观察稿
+## Asymmetric Island｜不对称岛
+
+一个偏离中心的紧凑图形岛，周围留出较多纸面。适合“人很小、场景很大”的关系，属于显式选择的稀疏蒸馏模式，不是默认模式。
 
 ```text
-medium: colored-pencil field study
-palette: limited natural palette sampled from the photo
-surface: layered pencil strokes, dry texture, uneven hand pressure
-edges: mostly open paper, no glossy digital gradients
-composition: preserve plant rhythm, light direction and depth
+layout: off-center compact cluster surrounded by quiet paper
+focal carrier: cut-paper mass or dry-print silhouette
+edge: natural isolated contour or one irregular paper edge
+accent: one high-chroma focal pin
 ```
 
-适合植物、花草、楼梯和生活化观察。要求笔触可见，但不要把每一片叶子都画成同样清晰的图标。
+人物可以只是 cluster 中的一块小剪纸，与一条路径、门缝或建筑轮廓产生关系。
 
-## 纸张拼贴
+## Torn Window｜撕纸窗口
+
+用一个不规则纸边界承载主要图形，让一两个源自场景的元素穿出边界。适合门、窗、山谷、桥或被观看的空间。
 
 ```text
-medium: tactile paper collage
-palette: 3–6 paper colors plus the scene's dominant tone
-surface: torn fibers, cut-paper planes, subtle cast shadows
-edges: varied torn and clean-cut edges
-composition: simplify into layered depth without changing the scene's spatial logic
+layout: irregular paper window with one or two forms escaping
+focal carrier: broken contour plus cut-paper mass
+edge: torn-fiber edge, shallow and tactile
+accent: color field derived from a meaningful source detail
 ```
 
-适合色块和几何结构明显的场景。人物可以是一个小型剪纸形象，利用一两层纸片和自然投影与场景连接。
+避免做成一个标准矩形照片框，也不要加入胶带和漂浮的 3D 纸张。
 
-## 线稿与限色块
+## Directional Drift｜方向漂移
+
+让台阶、河流、山脊、光线或人物行进方向成为一条视觉路径，图形沿路径逐渐稀释或转向留白。
 
 ```text
-medium: observational ink linework with restrained color blocks
-palette: black or deep umber line, 2–4 flat scene-derived colors
-surface: slightly imperfect print or notebook paper
-edges: open margins and intentional blank space
-composition: keep the strongest silhouette and directional line
+layout: forms extend along a source-derived direction
+focal carrier: broken contour or fragment stack
+edge: stippled dissolution or natural isolated contour
+accent: directional cue, not a decorative dot pattern
 ```
 
-适合建筑、街景、楼梯和留白丰富的照片。人物以轮廓和姿态表达，不需要面部细节。
+适合人物“走向某处”的记忆，但人物不能变成完整叙事插画的主角。
 
-## Risograph / 版画
+## Staggered Fragments｜错落碎片
+
+由两三组不完全相连的纸片建立时间、距离或观看顺序。适合把人物、场景结构和一个物件分开再重新绑定。
 
 ```text
-medium: small-edition risograph or relief-print zine
-palette: two or three ink colors with warm uncoated paper
-surface: visible grain, restrained ink spread, slight registration offset
-edges: printed frame or imperfect ink boundary
-composition: preserve the scene anchor while reducing photographic noise
+layout: two or three separated fragments with deliberate interval
+focal carrier: fragment stack
+edge: clean organic contours with light print bite
+accent: bridge between fragments
 ```
 
-适合怀旧、安静和出版物感。套印偏差必须轻微，不能遮蔽人物和场景关系。
+碎片必须来自同一个命题，不要变成密集 scrapbook。
 
-## Photo-relic editorial
+## Auxiliary Constellation｜辅助星群
+
+当场景中有明确的可重复元素（窗格、花、树叶、石头、灯光）时，将其作为不均匀的节奏点分布在核心人物或主结构周围。
 
 ```text
-medium: quiet editorial page built from a photo relic and hand-made marks
-palette: original photo tones with one paper and one ink accent
-surface: retained photographic fragment, paper grain, pencil annotation or crop mark
-edges: visible crop, border, fold, or archival fragment
-composition: let the original photo remain evidence while the cameo becomes an editorial decision
+layout: one core subject plus unequal source-derived supporting beats
+focal carrier: dry-print silhouette or paper mass
+edge: natural contour or one restrained dissolution
+accent: one exact hue shared by the supporting motif
 ```
 
-适合希望保留摄影证据感的作品。可以有少量编辑痕迹，但不要把页面变成模板化杂志封面。
+不要凭空制造点阵、星星、花瓣或图标；间隔和缺席本身要有意义。
 
-## 失败修复
+## Solid Color-Block｜单色块模式
 
-| 问题 | 收紧方式 |
+只有在用户明确写出 `单色块模式` 时使用：自然纸色 + 中性墨线/图形 + 一个连续的高饱和色块。人物和场景都必须进入统一的中性印刷系统，不能出现第二种彩色区域。
+
+## Failure repair
+
+| 问题 | 修复 |
 | --- | --- |
-| 变成泛化插画 | 增加 3–5 个具体场景事实，要求保留原动线和空间关系 |
-| 风格混杂 | 只保留一个主媒介，删除其他风格名 |
-| 人物像贴纸 | 要求人物采用相同纸张、线条、色板、阴影和遮挡；降低人物比例 |
-| 人物身份太弱 | 增加发型、服装色块、相机/背包和姿态，不增加写实脸要求 |
-| 人物抢主体 | 改为背影、侧影、远景或局部遮挡，恢复原始留白 |
-| 画面太干净 | 增加具体的纸张颗粒、铅笔压力、撕纸纤维或轻微套印偏差 |
-| 画面太脏 | 减少旧化、噪点和装饰，只保留一种材质痕迹 |
-| 文字变形 | 删除自动文字，保留空白标题区；如需文字，后期排版 |
+| 仍像完整照片 | 删除完整背景和原构图，改为 2–4 个 source anchors |
+| 仍像照片滤镜 | 明确 no photographic pixels，要求 original paper-based artwork |
+| 画面太满 | 先删掉装饰和重复细节；只有用户要求极简时，才将留白提高到 68–85% |
+| 留白太多、主体受损 | 切换到平衡场景拼贴，恢复 45–65% 主体 mass 和 3–5 个场景锚点 |
+| 拼贴很装饰化 | 删除胶带、邮票、坐标、随机圆点和第二个隐喻 |
+| 人物太写实 | 改为 dry-print silhouette 或 cut-paper mass，脸部只保留轮廓 |
+| 人物太小 | 明确人物占画面高度 12–16%，并放到台阶、门前或路径等尺度参照旁 |
+| 人物消失 | 增加当天服装色块、草帽、肩带、姿态和一个小 accent |
+| 色彩太多 | 只保留一个 exact high-chroma hue；必要时使用单色块模式 |
+| 生成无关符号 | 添加 no generic icon, no maritime symbol, no unsupported ornament |
+| 文字乱码 | 默认不加文字；后期排版短标题 |
